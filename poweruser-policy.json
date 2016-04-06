@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "NotAction": "iam:*",
+      "Resource": "*"
+    },
+   {
+        "Effect": "Deny",
+        "Action": [
+        "support:*",
+        "ec2:*ReservedInstance*",
+        "rds:*ReservedDBInstance*",
+        "redshift:*ReservedNode*",
+        "elasticache:*ReservedCacheNodes*",
+        "aws-portal:ViewBilling"
+        ],
+        "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+       "Action": [
+        "iam:*ServerCertificate*",
+        "iam:PassRole",
+        "iam:GetRole",
+        "iam:CreateRole",
+        "iam:PutRolePolicy"
+       ],
+      "Resource": "*"
+    }
+  ]
+}
