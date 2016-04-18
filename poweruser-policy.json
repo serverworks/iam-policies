@@ -24,7 +24,6 @@
         "iam:*ServerCertificate*",
         "iam:PassRole",
         "iam:GetRole",
-        "iam:CreateRole",
         "iam:PutRolePolicy"
        ],
       "Resource": "*"
