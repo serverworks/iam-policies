@@ -52,6 +52,24 @@
         "arn:aws:iam::123456789123:user/[serverworks-user]",
         "arn:aws:iam::123456789123:user/[ops-user]"
       ]
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "iam:*"
+    ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/*",
+        "arn:aws:iam::123456789123:group/*"
+      ],
+      "Condition": {
+        "ArnLike": {
+          "iam:PolicyArn": [
+            "arn:aws:iam::aws:policy/*",
+            "arn:aws:iam::123456789123:policy/*"
+          ]
+       }
+      }
     }
   ]
 }
