@@ -50,7 +50,8 @@
       ],
       "Resource": [
         "arn:aws:iam::123456789123:user/[serverworks-user]",
-        "arn:aws:iam::123456789123:user/[ops-user]"
+        "arn:aws:iam::123456789123:user/[ops-user]",
+        "arn:aws:iam::123456789123:user/[ca-user]"
       ]
     },
     {
