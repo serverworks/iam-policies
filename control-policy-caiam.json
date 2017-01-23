@@ -1,0 +1,57 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:ChangePassword",
+                "iam:DeleteUser",
+                "iam:DeleteUserPolicy",
+                "iam:GetUserPolicy",
+                "iam:UpdateUser",
+                "iam:CreateLoginProfile"
+            ],
+            "Resource": [
+                "arn:aws:iam::170186883937:user/serverworks",
+                "arn:aws:iam::170186883937:user/sky365",
+                "arn:aws:iam::170186883937:user/cloudautomator"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:UpdateAssumeRolePolicy"
+            ],
+            "Resource": [
+                "arn:aws:iam::170186883937:role/cs",
+                "arn:aws:iam::170186883937:role/tech",
+                "arn:aws:iam::170186883937:role/msp"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:*"
+            ],
+            "Resource": [
+                "arn:aws:iam::170186883937:user/*",
+                "arn:aws:iam::170186883937:group/*"
+            ],
+            "Condition": {
+                "ArnLike": {
+                    "iam:PolicyArn": [
+                        "arn:aws:iam::aws:policy/job-function/SupportUser",
+                        "arn:aws:iam::aws:policy/AWSSupportAccess",
+                        "arn:aws:iam::aws:policy/AdministratorAccess",
+                        "arn:aws:iam::aws:policy/IAMFullAccess",
+                        "arn:aws:iam::170186883937:policy/*"
+                    ]
+                }
+            }
+    }
+  ]
+}
