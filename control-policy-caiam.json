@@ -12,9 +12,9 @@
                 "iam:CreateLoginProfile"
             ],
             "Resource": [
-                "arn:aws:iam::170186883937:user/serverworks",
-                "arn:aws:iam::170186883937:user/sky365",
-                "arn:aws:iam::170186883937:user/cloudautomator"
+                "arn:aws:iam::123456789123:user/[serverworks-user]",
+                "arn:aws:iam::123456789123:user/[ops-user]",
+                "arn:aws:iam::123456789123:user/[ca-user]"
             ]
         },
         {
@@ -27,9 +27,9 @@
                 "iam:UpdateAssumeRolePolicy"
             ],
             "Resource": [
-                "arn:aws:iam::170186883937:role/cs",
-                "arn:aws:iam::170186883937:role/tech",
-                "arn:aws:iam::170186883937:role/msp"
+                "arn:aws:iam::123456789123:role/cs",
+                "arn:aws:iam::123456789123:role/tech",
+                "arn:aws:iam::123456789123:role/msp"
             ]
         },
         {
@@ -38,8 +38,8 @@
                 "iam:*"
             ],
             "Resource": [
-                "arn:aws:iam::170186883937:user/*",
-                "arn:aws:iam::170186883937:group/*"
+                "arn:aws:iam::123456789123:user/*",
+                "arn:aws:iam::123456789123:group/*"
             ],
             "Condition": {
                 "ArnLike": {
@@ -48,7 +48,7 @@
                         "arn:aws:iam::aws:policy/AWSSupportAccess",
                         "arn:aws:iam::aws:policy/AdministratorAccess",
                         "arn:aws:iam::aws:policy/IAMFullAccess",
-                        "arn:aws:iam::170186883937:policy/*"
+                        "arn:aws:iam::123456789123:policy/*"
                     ]
                 }
             }
