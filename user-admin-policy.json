@@ -21,8 +21,7 @@
         "iam:DeleteGroupPolicy",
         "iam:UpdateGroup",
         "iam:PutUserPolicy",
-        "iam:PutGroupPolicy",
-        "trustedadvisor:*NotificationPreferences"
+        "iam:PutGroupPolicy"
       ],
       "Resource": "*"
     },
