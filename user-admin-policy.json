@@ -39,12 +39,18 @@
     {
       "Effect": "Deny",
       "Action": [
-        "iam:ChangePassword",
         "iam:DeleteUser",
+        "iam:UpdateUser",
         "iam:DeleteUserPolicy",
         "iam:GetUserPolicy",
+        "iam:PutUserPolicy",
         "iam:UpdateUser",
-        "iam:CreateLoginProfile"
+        "iam:CreateLoginProfile",
+        "iam:UpdateLoginProfile",
+        "iam:DeleteLoginProfile",
+        "ima:CreateAccessKey",
+        "ima:UpdateAccessKey",
+        "ima:DeleteAccessKey"
       ],
       "Resource": [
         "arn:aws:iam::123456789123:user/[serverworks-user]",
