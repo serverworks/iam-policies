@@ -48,9 +48,9 @@
         "iam:CreateLoginProfile",
         "iam:UpdateLoginProfile",
         "iam:DeleteLoginProfile",
-        "ima:CreateAccessKey",
-        "ima:UpdateAccessKey",
-        "ima:DeleteAccessKey"
+        "iam:CreateAccessKey",
+        "iam:UpdateAccessKey",
+        "iam:DeleteAccessKey"
       ],
       "Resource": [
         "arn:aws:iam::123456789123:user/[serverworks-user]",
