@@ -41,6 +41,7 @@
                 "iam:AttachRolePolicy",
                 "iam:DeleteRolePolicy",
                 "iam:DetachRolePolicy",
+                "iam:PutRolePolicy",
                 "iam:UpdateAssumeRolePolicy"
             ],
             "Resource": [
