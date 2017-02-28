@@ -70,7 +70,10 @@
       "Condition": {
         "ArnLike": {
           "iam:PolicyArn": [
-            "arn:aws:iam::aws:policy/*",
+            "arn:aws:iam::aws:policy/job-function/SupportUser",
+            "arn:aws:iam::aws:policy/AWSSupportAccess",
+            "arn:aws:iam::aws:policy/AdministratorAccess",
+            "arn:aws:iam::aws:policy/IAMFullAccess",
             "arn:aws:iam::123456789123:policy/*"
           ]
        }
