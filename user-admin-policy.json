@@ -30,7 +30,6 @@
       "Action": [
         "iam:DeleteUser",
         "iam:DeleteUserPolicy",
-        "iam:GetUserPolicy",
         "iam:UpdateUser"
       ],
       "Resource": [
