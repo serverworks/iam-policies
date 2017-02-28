@@ -30,7 +30,6 @@
       "Action": [
         "iam:DeleteUser",
         "iam:DeleteUserPolicy",
-        "iam:GetUserPolicy",
         "iam:UpdateUser"
       ],
       "Resource": [
@@ -40,12 +39,18 @@
     {
       "Effect": "Deny",
       "Action": [
-        "iam:ChangePassword",
         "iam:DeleteUser",
+        "iam:UpdateUser",
         "iam:DeleteUserPolicy",
         "iam:GetUserPolicy",
+        "iam:PutUserPolicy",
         "iam:UpdateUser",
-        "iam:CreateLoginProfile"
+        "iam:CreateLoginProfile",
+        "iam:UpdateLoginProfile",
+        "iam:DeleteLoginProfile",
+        "iam:CreateAccessKey",
+        "iam:UpdateAccessKey",
+        "iam:DeleteAccessKey"
       ],
       "Resource": [
         "arn:aws:iam::123456789123:user/[serverworks-user]",
@@ -65,11 +70,30 @@
       "Condition": {
         "ArnLike": {
           "iam:PolicyArn": [
-            "arn:aws:iam::aws:policy/*",
+            "arn:aws:iam::aws:policy/job-function/SupportUser",
+            "arn:aws:iam::aws:policy/AWSSupportAccess",
+            "arn:aws:iam::aws:policy/AdministratorAccess",
+            "arn:aws:iam::aws:policy/IAMFullAccess",
             "arn:aws:iam::123456789123:policy/*"
           ]
        }
       }
+    },
+        {
+      "Effect": "Deny",
+      "Action": [
+        "iam:DeleteRole",
+        "iam:AttachRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:UpdateAssumeRolePolicy"
+    ],
+    "Resource": [
+      "arn:aws:iam::123456789012:role/cs",
+      "arn:aws:iam::123456789012:role/tech",
+      "arn:aws:iam::123456789012:role/msp"
+      ]
     }
   ]
 }
