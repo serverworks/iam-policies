@@ -1,6 +1,17 @@
 {
   "Version": "2012-10-17",
   "Statement": [
+            {
+      "Effect": "Deny",
+      "Action": [
+        "iam:DeleteUser",
+        "iam:DeleteUserPolicy",
+        "iam:UpdateUser"
+            ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/[user-admin]"
+            ]
+         },
         {
             "Effect": "Deny",
             "Action": [
