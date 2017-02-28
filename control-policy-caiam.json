@@ -37,22 +37,6 @@
         {
             "Effect": "Deny",
             "Action": [
-                "iam:DeleteRole",
-                "iam:AttachRolePolicy",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:PutRolePolicy",
-                "iam:UpdateAssumeRolePolicy"
-            ],
-            "Resource": [
-                "arn:aws:iam::123456789123:role/cs",
-                "arn:aws:iam::123456789123:role/tech",
-                "arn:aws:iam::123456789123:role/msp"
-            ]
-        },
-        {
-            "Effect": "Deny",
-            "Action": [
                 "iam:*"
             ],
             "Resource": [
@@ -70,6 +54,22 @@
                     ]
                 }
             }
-    }
+    },
+    {
+            "Effect": "Deny",
+            "Action": [
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:PutRolePolicy",
+                "iam:UpdateAssumeRolePolicy"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:role/cs",
+                "arn:aws:iam::123456789123:role/tech",
+                "arn:aws:iam::123456789123:role/msp"
+            ]
+        }
   ]
 }
