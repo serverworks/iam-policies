@@ -1,35 +1,37 @@
 {
   "Version": "2012-10-17",
   "Statement": [
+            {
+      "Effect": "Deny",
+      "Action": [
+        "iam:DeleteUser",
+        "iam:DeleteUserPolicy",
+        "iam:UpdateUser"
+            ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/[user-admin]"
+            ]
+         },
         {
             "Effect": "Deny",
             "Action": [
-                "iam:ChangePassword",
-                "iam:DeleteUser",
-                "iam:DeleteUserPolicy",
-                "iam:GetUserPolicy",
-                "iam:UpdateUser",
-                "iam:CreateLoginProfile"
+        "iam:DeleteUser",
+        "iam:UpdateUser",
+        "iam:DeleteUserPolicy",
+        "iam:GetUserPolicy",
+        "iam:PutUserPolicy",
+        "iam:UpdateUser",
+        "iam:CreateLoginProfile",
+        "iam:UpdateLoginProfile",
+        "iam:DeleteLoginProfile",
+        "iam:CreateAccessKey",
+        "iam:UpdateAccessKey",
+        "iam:DeleteAccessKey"
             ],
             "Resource": [
                 "arn:aws:iam::123456789123:user/[serverworks-user]",
                 "arn:aws:iam::123456789123:user/[ops-user]",
                 "arn:aws:iam::123456789123:user/[ca-user]"
-            ]
-        },
-        {
-            "Effect": "Deny",
-            "Action": [
-                "iam:DeleteRole",
-                "iam:AttachRolePolicy",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:UpdateAssumeRolePolicy"
-            ],
-            "Resource": [
-                "arn:aws:iam::123456789123:role/cs",
-                "arn:aws:iam::123456789123:role/tech",
-                "arn:aws:iam::123456789123:role/msp"
             ]
         },
         {
@@ -52,6 +54,22 @@
                     ]
                 }
             }
-    }
+    },
+    {
+            "Effect": "Deny",
+            "Action": [
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:PutRolePolicy",
+                "iam:UpdateAssumeRolePolicy"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:role/cs",
+                "arn:aws:iam::123456789123:role/tech",
+                "arn:aws:iam::123456789123:role/msp"
+            ]
+        }
   ]
 }
