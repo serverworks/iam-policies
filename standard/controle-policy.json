@@ -1,0 +1,55 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": [
+        "support:*",
+        "aws-portal:ViewBilling",
+        "iam:CreateGroup",
+        "iam:DeleteAccountAlias",
+        "iam:DeleteGroup",
+        "iam:DeleteGroupPolicy",
+        "iam:UpdateGroup",
+        "iam:PutUserPolicy",
+        "iam:PutGroupPolicy",
+        "trustedadvisor:*NotificationPreferences"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "iam:ChangePassword",
+        "iam:DeleteUser",
+        "iam:DeleteUserPolicy",
+        "iam:GetUserPolicy",
+        "iam:UpdateUser",
+        "iam:CreateLoginProfile"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/[serverworks-user]",
+        "arn:aws:iam::123456789123:user/[ops-user]",
+        "arn:aws:iam::123456789123:user/[ca-user]"
+      ]
+    },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:*"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:user/*",
+                "arn:aws:iam::123456789123:group/*"
+            ],
+            "Condition": {
+                "ArnLike": {
+                    "iam:PolicyArn": [
+                        "arn:aws:iam::aws:policy/*",
+                        "arn:aws:iam::123456789123:policy/*"
+                    ]
+                }
+            }
+        }
+    ]
+}
