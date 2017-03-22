@@ -74,7 +74,11 @@
                 "arn:aws:iam::123456789123:[role-partner]",
                 "arn:aws:iam::123456789123:[role-pu]",
                 "arn:aws:iam::123456789123:[role-ro]",
-                "arn:aws:iam::123456789123:[role-billing]"
+                "arn:aws:iam::123456789123:[role-billing]",
+                "arn:aws:iam::123456789123:[role-msp-ro]",
+                "arn:aws:iam::123456789123:[role-msp-ops]",
+                "arn:aws:iam::123456789123:[role-msp-partner-ro]",
+                "arn:aws:iam::123456789123:[role-msp-partner-ops]"
             ]
         }
     ]
