@@ -11,7 +11,8 @@
         "iam:DeleteGroupPolicy",
         "iam:UpdateGroup",
         "iam:PutUserPolicy",
-        "iam:PutGroupPolicy"
+        "iam:PutGroupPolicy",
+        "organizations:*"
       ],
       "Resource": "*"
     },
