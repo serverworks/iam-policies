@@ -35,7 +35,6 @@
                 "rds:CreateDBInstance",
                 "rds:RebootDBInstance",
                 "rds:ModifyDBInstance",
-                "rds:RebootDBInstance",
                 "rds:*SecurityGroup*",
                 "rds:CreateDBSnapshot",
                 "rds:AddTagsToResource",
