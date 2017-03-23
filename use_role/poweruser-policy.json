@@ -3,7 +3,10 @@
   "Statement": [
     {
       "Effect": "Allow",
-      "NotAction": "iam:*",
+      "NotAction": [
+                "iam:*",
+                "organizations:*"
+            ],
       "Resource": "*"
     },
     {
