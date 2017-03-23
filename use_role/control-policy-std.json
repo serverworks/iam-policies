@@ -6,7 +6,6 @@
       "Action": [
         "support:*",
         "aws-portal:ViewBilling",
-        "iam:CreateGroup",
         "iam:DeleteAccountAlias",
         "iam:DeleteGroup",
         "iam:DeleteGroupPolicy",
