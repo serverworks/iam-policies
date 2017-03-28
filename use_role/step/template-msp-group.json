@@ -3,6 +3,9 @@
     "Statement": {
         "Effect": "Allow",
         "Action": "sts:AssumeRole",
-        "Resource": "arn:aws:iam::123456789123:[role-msp-ops]"
+        "Resource": [
+            "arn:aws:iam::123456789123:[role-msp-ops]",
+            "arn:aws:iam::123456789123:[role-msp-ro]"
+        ]
     }
 }
