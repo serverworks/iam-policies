@@ -3,6 +3,7 @@
     "Statement": {
         "Effect": "Allow",
         "Action": "sts:AssumeRole",
-        "Resource": "arn:aws:iam::123456789123:[role-pu]"
+        "Resource": "arn:aws:iam::123456789123:[role-pu]",
+        "Resource": "arn:aws:iam::123456789123:[role-ro]"
     }
 }
