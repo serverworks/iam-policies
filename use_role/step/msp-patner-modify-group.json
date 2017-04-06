@@ -1,8 +1,50 @@
 {
 "Version": "2012-10-17",
-    "Statement": {
-        "Effect": "Allow",
-        "Action": "sts:AssumeRole",
-        "Resource": "arn:aws:iam::*:[role-msp-partner-ops]"
-    }
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Resource": "arn:aws:iam::*:[role-msp-partner-ops]"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListUsers"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:user/"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListVirtualMFADevices"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:mfa/"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:EnableMFADevice",
+                "iam:DeactivateMFADevice",
+                "iam:ResyncMFADevice",
+                "iam:ListMFADevices"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:user/${aws:username}"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:DeleteVirtualMFADevice",
+                "iam:CreateVirtualMFADevice"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:mfa/${aws:username}"
+            ]
+        }
+    ]
 }
