@@ -1,0 +1,76 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*"
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "support:*",
+        "ec2:*ReservedInstance*",
+        "rds:*ReservedDBInstance*",
+        "redshift:*ReservedNode*",
+        "elasticache:*ReservedCacheNodes*",
+        "aws-portal:ViewBilling",
+        "iam:CreateGroup",
+        "iam:DeleteAccountAlias",
+        "iam:DeleteGroup",
+        "iam:DeleteGroupPolicy",
+        "iam:UpdateGroup",
+        "iam:PutUserPolicy",
+        "iam:PutGroupPolicy",
+        "trustedadvisor:*NotificationPreferences"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "iam:DeleteUser",
+        "iam:DeleteUserPolicy",
+        "iam:GetUserPolicy",
+        "iam:UpdateUser"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/[user-admin]"
+      ]
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "iam:ChangePassword",
+        "iam:DeleteUser",
+        "iam:DeleteUserPolicy",
+        "iam:GetUserPolicy",
+        "iam:UpdateUser",
+        "iam:CreateLoginProfile"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/[serverworks-user]",
+        "arn:aws:iam::123456789123:user/[ops-user]",
+        "arn:aws:iam::123456789123:user/[ca-user]"
+      ]
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "iam:*"
+    ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/*",
+        "arn:aws:iam::123456789123:group/*"
+      ],
+      "Condition": {
+        "ArnLike": {
+          "iam:PolicyArn": [
+            "arn:aws:iam::aws:policy/*",
+            "arn:aws:iam::123456789123:policy/*"
+          ]
+       }
+      }
+    }
+  ]
+}

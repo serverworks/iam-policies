@@ -15,13 +15,13 @@
         "redshift:*ReservedNode*",
         "elasticache:*ReservedCacheNodes*",
         "aws-portal:ViewBilling",
-        "iam:CreateGroup",
         "iam:DeleteAccountAlias",
         "iam:DeleteGroup",
         "iam:DeleteGroupPolicy",
         "iam:UpdateGroup",
         "iam:PutUserPolicy",
-        "iam:PutGroupPolicy"
+        "iam:PutGroupPolicy",
+        "organizations:*"
       ],
       "Resource": "*"
     },
@@ -44,7 +44,6 @@
         "iam:DeleteUserPolicy",
         "iam:GetUserPolicy",
         "iam:PutUserPolicy",
-        "iam:UpdateUser",
         "iam:CreateLoginProfile",
         "iam:UpdateLoginProfile",
         "iam:DeleteLoginProfile",
@@ -54,7 +53,6 @@
       ],
       "Resource": [
         "arn:aws:iam::123456789123:user/[serverworks-user]",
-        "arn:aws:iam::123456789123:user/[ops-user]",
         "arn:aws:iam::123456789123:user/[ca-user]"
       ]
     },
@@ -90,9 +88,7 @@
         "iam:UpdateAssumeRolePolicy"
     ],
     "Resource": [
-      "arn:aws:iam::123456789123:role/cs",
-      "arn:aws:iam::123456789123:role/tech",
-      "arn:aws:iam::123456789123:role/msp"
+        "arn:aws:iam::123456789123:role/ServerworksControlRole*"
       ]
     }
   ]
