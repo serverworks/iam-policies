@@ -1,0 +1,77 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": [
+        "support:*",
+        "aws-portal:ViewBilling",
+        "iam:DeleteAccountAlias",
+        "iam:DeleteGroup",
+        "iam:DeleteGroupPolicy",
+        "iam:UpdateGroup",
+        "iam:PutUserPolicy",
+        "iam:PutGroupPolicy",
+        "organizations:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "iam:DeleteUser",
+        "iam:UpdateUser",
+        "iam:DeleteUserPolicy",
+        "iam:GetUserPolicy",
+        "iam:PutUserPolicy",
+        "iam:UpdateUser",
+        "iam:CreateLoginProfile",
+        "iam:UpdateLoginProfile",
+        "iam:DeleteLoginProfile",
+        "iam:CreateAccessKey",
+        "iam:UpdateAccessKey",
+        "iam:DeleteAccessKey"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/[serverworks-user]",
+        "arn:aws:iam::123456789123:user/[ca-user]"
+      ]
+    },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:*"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:user/*",
+                "arn:aws:iam::123456789123:group/*"
+            ],
+            "Condition": {
+                "ArnLike": {
+                    "iam:PolicyArn": [
+                        "arn:aws:iam::aws:policy/job-function/SupportUser",
+                        "arn:aws:iam::aws:policy/AWSSupportAccess",
+                        "arn:aws:iam::aws:policy/AdministratorAccess",
+                        "arn:aws:iam::aws:policy/IAMFullAccess",
+                        "arn:aws:iam::123456789123:policy/*"
+
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:PutRolePolicy",
+                "iam:UpdateAssumeRolePolicy"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:role/ServerworksControlRole*"
+            ]
+        }
+    ]
+}
