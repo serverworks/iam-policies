@@ -1,6 +1,6 @@
 # iam-policies
 ## IAMポリシー名とインラインJSON
-|AIMポリシー名|インラインJSON|
+|IAMポリシー名|インラインJSON|
 |-----|----|
 |ServerworksControlPolicyStd|/use_role/control-policy-std.json|
 |ServerworksControlPolicyRestricted|/use_role/control-policy-consolidated.json|
