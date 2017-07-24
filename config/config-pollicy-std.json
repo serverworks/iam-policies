@@ -1,0 +1,78 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": [
+        "support:*",
+        "aws-portal:ViewBilling",
+        "trustedadvisor:*NotificationPreferences"
+      ],
+      "Resource": "*"
+    },
+	{
+      "Effect": "Deny",
+      "Action": [
+        "ec2:*ReservedInstance*",
+        "rds:*ReservedDBInstance*",
+        "redshift:*ReservedNode*",
+        "elasticache:*ReservedCacheNodes*",
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "iam:DeleteUser",
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/[user-admin]"
+      ]
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "iam:ChangePassword",
+        "iam:DeleteUser",
+        "iam:DeleteUserPolicy",
+        "iam:GetUserPolicy",
+        "iam:UpdateUser",
+        "iam:CreateLoginProfile"
+      ],
+      "Resource": [
+        "arn:aws:iam::123456789123:user/[serverworks-user]",
+        "arn:aws:iam::123456789123:user/[ca-user]"
+      ]
+    },
+	{
+            "Effect": "Deny",
+            "Action": [
+                "iam:DeletePolicy",
+                "iam:AttachRolePolicy",
+				"iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:DetachUserPolicy",
+                "iam:DeletePolicyVersion"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:policy/ServerworksControlPolicy*"
+            ]
+        },
+    {
+            "Effect": "Deny",
+            "Action": [
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:PutRolePolicy",
+                "iam:UpdateAssumeRolePolicy"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:role/ServerworksControlRole*"
+            ]
+        }
+      }
+    }
+  ]
+}
