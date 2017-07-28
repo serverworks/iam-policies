@@ -71,6 +71,11 @@
             "Resource": [
                 "arn:aws:iam::123456789123:role/ServerworksControlRole*"
             ]
+        },
+		{
+             "Effect": "Deny",
+		     "Action": "lambda:*",
+             "Resource": "arn:aws:lambda:::function:PutPolicyToIamBySWX*"
         }
       }
     }
