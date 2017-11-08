@@ -1,55 +1,56 @@
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Deny",
-      "Action": [
-        "support:*",
-        "aws-portal:ViewBilling",
-        "trustedadvisor:*NotificationPreferences"
-      ],
-      "Resource": "*"
-    },
-	{
-      "Effect": "Deny",
-      "Action": [
-        "ec2:*ReservedInstance*",
-        "rds:*ReservedDBInstance*",
-        "redshift:*ReservedNode*",
-        "elasticache:*ReservedCacheNodes*",
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Deny",
-      "Action": [
-        "iam:DeleteUser",
-      ],
-      "Resource": [
-        "arn:aws:iam::123456789123:user/[user-admin]"
-      ]
-    },
-    {
-      "Effect": "Deny",
-      "Action": [
-        "iam:ChangePassword",
-        "iam:DeleteUser",
-        "iam:DeleteUserPolicy",
-        "iam:GetUserPolicy",
-        "iam:UpdateUser",
-        "iam:CreateLoginProfile"
-      ],
-      "Resource": [
-        "arn:aws:iam::123456789123:user/[serverworks-user]",
-        "arn:aws:iam::123456789123:user/[ca-user]"
-      ]
-    },
-	{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
             "Effect": "Deny",
             "Action": [
+                "support:*",
+                "aws-portal:ViewBilling",
+                "trustedadvisor:*NotificationPreferences"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "ec2:*ReservedInstance*",
+                "rds:*ReservedDBInstance*",
+                "redshift:*ReservedNode*",
+                "elasticache:*ReservedCacheNodes*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:DeleteUser"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:user/[user-admin]"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:ChangePassword",
+                "iam:DeleteUser",
+                "iam:DeleteUserPolicy",
+                "iam:GetUserPolicy",
+                "iam:UpdateUser",
+                "iam:CreateLoginProfile"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:user/[serverworks-user]",
+                "arn:aws:iam::123456789123:user/[ca-user]"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:CreatePolicyVersion",
                 "iam:DeletePolicy",
-                "iam:AttachRolePolicy",
-				"iam:DeleteRolePolicy",
+                "iam:AttachPolicy",
+                "iam:DeletePolicy",
                 "iam:DetachRolePolicy",
                 "iam:DetachUserPolicy",
                 "iam:DeletePolicyVersion"
@@ -58,7 +59,7 @@
                 "arn:aws:iam::123456789123:policy/ServerworksControlPolicy*"
             ]
         },
-    {
+        {
             "Effect": "Deny",
             "Action": [
                 "iam:DeleteRole",
@@ -72,12 +73,33 @@
                 "arn:aws:iam::123456789123:role/ServerworksControlRole*"
             ]
         },
-		{
-             "Effect": "Deny",
-		     "Action": "lambda:*",
-             "Resource": "arn:aws:lambda:::function:PutPolicyToIamBySWX*"
+        {
+            "Effect": "Deny",
+            "Action": [
+                "iam:A*",
+                "iam:C*",
+                "iam:Deactive*",
+                "iam:Delete*",
+                "iam:E*",
+                "iam:G*",
+                "iam:P*",
+                "iam:R*",
+                "iam:S*",
+                "iam:U*"
+            ],
+            "Resource": [
+                "arn:aws:iam::123456789123:user/*",
+                "arn:aws:iam::123456789123:group/*",
+                "arn:aws:iam::123456789123:role/*"
+            ],
+            "Condition": {
+                "ArnLike": {
+                    "iam:PolicyArn": [
+                        "arn:aws:iam::123456789123:role/ServerworksControlRole*",
+                        "arn:aws:iam::123456789123:policy/ServerworksControlPolicy*"
+                    ]
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }
