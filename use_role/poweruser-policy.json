@@ -1,25 +1,27 @@
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "NotAction": [
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "NotAction": [
                 "iam:*",
                 "organizations:*"
             ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
-       "Action": [
-        "iam:*ServerCertificate*",
-        "iam:PassRole",
-        "iam:GetRole",
-        "iam:CreateRole",
-        "iam:ListRoles",
-        "iam:PutRolePolicy"
-       ],
-      "Resource": "*"
-    }
-  ]
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:*ServerCertificate*",
+                "iam:PassRole",
+                "iam:GetRole",
+                "iam:CreateRole",
+                "iam:ListRoles",
+                "iam:PutRolePolicy",
+                "iam:CreateServiceLinkedRole",
+                "iam:DeleteServiceLinkedRole"
+            ],
+            "Resource": "*"
+        }
+    ]
 }
