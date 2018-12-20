@@ -14,7 +14,7 @@
         "rds:*ReservedDBInstance*",
         "redshift:*ReservedNode*",
         "elasticache:*ReservedCacheNodes*",
-        "aws-portal:ViewBilling",
+        "aws-portal:View*",
         "iam:DeleteAccountAlias",
         "iam:DeleteGroup",
         "iam:DeleteGroupPolicy",
