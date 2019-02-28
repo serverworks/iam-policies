@@ -5,7 +5,9 @@
       "Effect": "Deny",
       "Action": [
         "support:*",
-        "aws-portal:View*",
+        "aws-portal:Modify*",
+        "aws-portal:ViewAccount",
+        "aws-portal:*PaymentMethods",
         "iam:DeleteAccountAlias",
         "iam:DeleteGroup",
         "iam:DeleteGroupPolicy",
