@@ -5,7 +5,8 @@
             "Effect": "Allow",
             "NotAction": [
                 "iam:*",
-                "organizations:*"
+                "organizations:*",
+                "aws-portal:*"
             ],
             "Resource": "*"
         },
