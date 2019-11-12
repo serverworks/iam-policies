@@ -14,7 +14,7 @@
         "rds:*ReservedDBInstance*",
         "redshift:*ReservedNode*",
         "elasticache:*ReservedCacheNodes*",
-        "savingsplans:CreateSavingsPlans",
+        "savingsplans:*",
         "aws-portal:Modify*",
         "aws-portal:ViewAccount",
         "aws-portal:*PaymentMethods",
