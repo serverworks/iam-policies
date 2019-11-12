@@ -7,7 +7,7 @@
                 "iam:*",
                 "organizations:*",
                 "aws-portal:*",
-                "savingsplans:CreateSavingsPlans"
+                "savingsplans:*"
             ],
             "Resource": "*"
         },
