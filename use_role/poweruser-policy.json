@@ -6,7 +6,8 @@
             "NotAction": [
                 "iam:*",
                 "organizations:*",
-                "aws-portal:*"
+                "aws-portal:*",
+                "savingsplans:CreateSavingsPlans"
             ],
             "Resource": "*"
         },
