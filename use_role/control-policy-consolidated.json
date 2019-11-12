@@ -8,7 +8,7 @@
         "rds:*ReservedDBInstance*",
         "redshift:*ReservedNode*",
         "elasticache:*ReservedCacheNodes*",
-        "savingsplans:CreateSavingsPlans"
+        "savingsplans:*"
       ],
       "Resource": "*"
     }
